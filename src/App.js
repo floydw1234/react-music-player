@@ -15,9 +15,20 @@ const App = () => {
 	// Ref
 	const audioRef = useRef(null);
 
-	// State
 	const [songs, setSongs] = useState(data());
-	const [currentSong, setCurrentSong] = useState(songs[0]);
+
+	var songIndex = 0
+	try{
+		songIndex = parseInt(window.location.pathname[1])
+		if (isNaN(songIndex)){
+			songIndex = 0
+		}
+	}catch{
+		songIndex = 0
+	}
+	const [currentSong, setCurrentSong] = useState(songs[songIndex]);
+	
+	
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [libraryStatus, setLibraryStatus] = useState(false);
 	const [songInfo, setSongInfo] = useState({

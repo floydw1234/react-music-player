@@ -4,7 +4,7 @@ const Credit = () => {
 	return (
 		<CreditContainer>
 			<Link href="npress.biz" target="_blank">
-				Made by Wilson
+				Made by NPress Inc.
 			</Link>
 			<br></br>
 			

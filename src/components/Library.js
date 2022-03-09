@@ -2,7 +2,7 @@ import React from "react";
 import LibrarySong from "./LibrarySong";
 import styled from "styled-components";
 
-const Library = ({ songs, currentSong, setCurrentSong, audioRef, isPlaying, setSongs, libraryStatus }) => {
+const Library = ({ songs, currentSong, setCurrentSong, audioRef, isPlaying, setSongs, libraryStatus, setLibraryStatus }) => {
 	return (
 		<LibraryContainer libraryStatus={libraryStatus}>
 			<H1>Library</H1>
@@ -16,6 +16,8 @@ const Library = ({ songs, currentSong, setCurrentSong, audioRef, isPlaying, setS
 						audioRef={audioRef}
 						isPlaying={isPlaying}
 						setSongs={setSongs}
+						libraryStatus={libraryStatus}
+						setLibraryStatus={setLibraryStatus}
 					/>
 				))}
 			</SongContainer>

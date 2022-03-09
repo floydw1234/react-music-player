@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const LibrarySong = ({ song, setCurrentSong, audioRef, isPlaying, songs, setSongs }) => {
+const LibrarySong = ({ song, setCurrentSong, audioRef, isPlaying, songs, setSongs, libraryStatus,setLibraryStatus}) => {
 	// Function
 	const songSelectHandler = async () => {
+		setLibraryStatus = !libraryStatus
 		await setCurrentSong(song);
 		const curSong = song;
 		const songList = songs;
@@ -22,6 +23,7 @@ const LibrarySong = ({ song, setCurrentSong, audioRef, isPlaying, songs, setSong
 			}
 		});
 		setSongs(newSongs);
+
 
 		// check if user is wanting to play a song.
 		if (isPlaying) {

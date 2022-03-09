@@ -36,12 +36,15 @@ const App = () => {
 		duration: 0,
 	});
 
+
 	// Functions
 	const updateTimeHandler = (e) => {
 		const currentTime = e.target.currentTime;
 		const duration = e.target.duration;
 		setSongInfo({ ...songInfo, currentTime, duration });
 	};
+
+	
 
 	const songEndHandler = async () => {
 		let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
@@ -90,6 +93,7 @@ const App = () => {
 				isPlaying={isPlaying}
 				setSongs={setSongs}
 				libraryStatus={libraryStatus}
+				setLibraryStatus={setLibraryStatus}
 			/>
 			<Credit />
 			<audio
